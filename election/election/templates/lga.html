@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+ <div class="container">
+     <div class="link"><a href="{% url 'lgaresult' %}"><i class="fas fa-home" id="home-icon"></i>View LGA Results</a></div>
+     <div style="display:flex; justify-content:space-between;">
+         <div style="padding-bottom:12px; font-size:21px; font-weight:bold;">State Name: Delta State</div>
+         <div class="link"><a href="{% url 'state' %}">View States</a></div>
+     </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>GENERAL ID</th>
+                    <th>LGA ID</th>
+                    <th>LGA NAME</th>
+                    <th>LGA NUMBER</th>
+                    <th>LGA DESCRIPTION</th>
+                    <th>USER INPUT</th>
+                    <th>DATE/TIME</th>
+                    <th>USER IP ADDRESS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for a in lga %}
+                    <tr>
+                        <td>{{a.id}}</td>
+                        <td>{{a.lga_id}}</td>
+                        <td>{{a.lga_name }}</td>
+                        <td>{{a.lga_numb }}</td>
+                        <td>{{a.lga_description }}</td>
+                        <td>{{a.entered_by_user }}</td>
+                        <td>{{a.date_entered}}</td>
+                        <td>{{a.user_ip_address}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock content%}
+

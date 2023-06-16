@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+  <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>GENERAL ID</th>
+                    <th>UNIT ID</th>
+                    <th>PARTY ABBREVIATION</th>
+                    <th>PARTY SCORES</th>
+                    <th>USER INPUT</th>
+                    <th>DATE</th>
+                    <th>USER IP ADDRESS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for a in unitresult %}
+                    <tr>
+                        <td>{{a.id}}</td>
+                        <td>{{a.polling_unit_id}}</td>
+                        <td>{{a.party_abbreviation }}</td>
+                        <td>{{a.party_score }}</td>
+                        <td>{{a.entered_by_user }}</td>
+                        <td>{{a.date_entered}}</td>
+                        <td>{{a.user_ip_address}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock content%}

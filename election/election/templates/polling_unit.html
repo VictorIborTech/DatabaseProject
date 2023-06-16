@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<div class="container">
+    <div style="padding-bottom:12px; font-size:21px; font-weight:bold;">State Name: Delta State</div>
+     <div style="display:flex; justify-content:space-between;">
+         <div class="link" style="padding-left:9px;"><a href="{% url 'state' %}">View States</a></div>
+        <div class="link" style="padding-right:15px;"><a href="{% url 'unitresults' %}">Unit Results</a></div>
+     </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Polling Unit ID</th>
+                    <th>Ward ID</th>
+                    <th>Lga ID</th>
+                    <th>Unique_Ward ID</th>
+                    <th>Polling Unit Number</th>
+                    <th>Polling Unit Name</th>
+                    <th>Polling Unit Description</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for p in p_unit %}
+                    <tr>
+                        <td>{{p.id}}</td>
+                        <td>{{ p.polling_unit_id }}</td>
+                        <td>{{ p.ward_id }}</td>
+                        <td>{{ p.lga_id }}</td>
+                        <td>{{ p.uniquewardid }}</td>
+                        <td>{{ p.polling_unit_number }}</td>
+                        <td>{{ p.polling_unit_name }}</td>
+                        <td>{{ p.polling_unit_description }}</td>
+                        <td>{{ p.lat }}</td>
+                        <td>{{ p.long }}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+{% endblock content%}

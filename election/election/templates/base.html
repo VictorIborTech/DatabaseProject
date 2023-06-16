@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<header class="header">
+  <div class="container">
+
+        <nav>
+            <ul>
+                    <li><a href="{% url 'polling_units' %}"><i class="fas fa-home" id="home-icon"></i>Home</a></li>
+                    <li><a href="{% url 'lga' %}"><i class="fas fa-tasks" id="task-icon"></i>LGA</a></li>
+                    <li><a href="{% url 'agents' %}"><i class="fas fa-plus" id="create-icon"></i>Agents</a></li>
+            </ul>
+
+        </nav>
+  </div>
+
+</header>
+<div>
+    {% block content%}
+    {% endblock%}
+</div>
+
+<footer class="footer">
+  <p>&copy; Copyright Reserved 2011 Election.</p>
+
+</footer>
+</body>
+</html>

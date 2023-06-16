@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<div class="container">
+    <div style="margin-bottom:29px;"><a style="background:grey;
+    border-radius:6px;
+    padding:10px 6px;
+    color:white;" href="{% url 'state' %}">View States</a></div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>LGA ID</th>
+                    <th>LGA NAME</th>
+                    <th>PARTY ABBREVIATION</th>
+                    <th>PARTY SCORES</th>
+                    <th>USER INPUT</th>
+                    <th>DATE</th>
+                    <th>USER IP ADDRESS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for a in lgaresult %}
+                    <tr>
+                        <td>{{a.id}}</td>
+                        <td>{{a.lga_name}}</td>
+                        <td>{{a.party_abbreviation }}</td>
+                        <td>{{a.party_score }}</td>
+                        <td>{{a.entered_by_user }}</td>
+                        <td>{{a.date_entered}}</td>
+                        <td>{{a.user_ip_address}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+{% endblock content%}

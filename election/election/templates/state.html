@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+ <div class="container">
+     <div class="link"><a href="{% url 'lga' %}"><i class="fas fa-home" id="home-icon"></i>View Results</a></div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>STATE ID</th>
+                    <th>STATE NAME</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for s in state %}
+                    <tr>
+                        <td>{{s.id}}</td>
+                        <td>{{s.state_name}}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+{% endblock content%}
+

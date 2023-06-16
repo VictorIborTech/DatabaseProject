@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Polling Unit ID</th>
+                    <th>LGA ID</th>
+                    <th>Polling Unit Number</th>
+                    <th>Polling Unit Name</th>
+                    <th>Polling Unit Description</th>
+                    <th>Party Abbreviation</th>
+                    <th>Party Scores</th>
+                    <th>Date</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                    <tr>
+                        <td><input type="number" name="id"></td>
+                        <td><input type="number" name="polling_unit_id"></td>
+                        <td><input type="number" name="lga_id"></td>
+                        <td><input type="number" name="polling_unit_number"></td>
+                        <td><input type="text" name="polling_unit_name"></td>
+                        <td><input type="text" name="polling_unit_description"></td>
+                        <td><input type="text" name="party_abbreviation"></td>
+                        <td><input type="number" name="party_score"></td>
+                        <td><input type="date" name="date"></td>
+                    </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+{% endblock content%}
